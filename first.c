@@ -1,4 +1,7 @@
 /*
+Student: Lillian Ma - 201722465
+Class: COMP 2655-002
+Professor: Terrance Mok
 
 */
 
@@ -41,23 +44,63 @@ int main()
              read_char AND write_char, AND YOU ARE NOT ALLOWED TO CODE ANY
              BRANCHES (i.e. NO DECISIONS, LOOPS, ETC).
 
-             currently, reads a single character, then writes it back: */
+             currently, reads a single character, then writes it back: 
+  */
 
   read_char();      /* read character */
-  d1 = d0;          /* save character */
+  d1 = d0 & 0x000000FF;          /* save character 1 in d1 */
+  printf("%d", d1);
 
   d0 = CR;          /* go to a new line */
-  write_char();
+  write_char();   //write carriage return
   d0 = LF;
-  write_char();
+  write_char(); //write line feed
 
-  d0 = d1;
+  d0 = d1;        //load d1 into d0 to to be written
   write_char();     /* echo character */
 
   d0 = CR;          /* go to a new line */
-  write_char();
+  write_char();     //write carriage return
   d0 = LF;
-  write_char();
+  write_char();     //write line feed
+
+  //--------------------------------------------------
+
+  read_char();      /* read character */
+  d2 = d0;          /* save character 1 in d1 */
+
+  d0 = CR;          /* go to a new line */
+  write_char();   //write carriage return
+  d0 = LF;
+  write_char(); //write line feed
+
+  d0 = d1;        //load d1 into d0 to to be written
+  write_char();     /* echo character */
+
+  d0 = CR;          /* go to a new line */
+  write_char();     //write carriage return
+  d0 = LF;
+  write_char();     //write line feed
+
+  //--------------------------------------------------
+
+  read_char();      /* read character */
+  d3 = d0;          /* save character 1 in d1 */
+
+  d0 = CR;          /* go to a new line */
+  write_char();   //write carriage return
+  d0 = LF;
+  write_char(); //write line feed
+
+  d0 = d1;        //load d1 into d0 to to be written
+  write_char();     /* echo character */
+
+  d0 = CR;          /* go to a new line */
+  write_char();     //write carriage return
+  d0 = LF;
+  write_char();     //write line feed
+
+  printf("%d, %d, %d", d1, d2, d3);
 
   return 0;         /* exit */
 }
