@@ -101,6 +101,7 @@ int main()
   write_char();     //write line feed
 
   printf("%d, %d, %d", d1, d2, d3);
+  //eeeeee
 
   return 0;         /* exit */
 }
