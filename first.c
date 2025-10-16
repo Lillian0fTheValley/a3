@@ -58,6 +58,7 @@ int main()
     d3 - input - receives AND result from d0 which represents the third character input
   */
 
+  //BEGIN INPUT SECTION
   read_char();      /* read character into d0*/
   d1 = d0 & 0x000000FF;          /* perform AND operation on d0 and stores results in d1*/
 
@@ -111,7 +112,24 @@ int main()
   write_char();     //write line feed
 
   printf("%d, %d, %d", d1, d2, d3);
+  //END INPUT SECTION
 
+  //BEGIN COMPUTATION SECTION
+  //emulating horner's rule here
+  d4 = d1 - '0';//converting d1 from ascii to int
+  d5 = d2 - '0';//converting d2 from ascii to int
+  d6 = d3 - '0';//converting d3 from ascii to int
+
+  d7 = d4 * 10;//(a * 10)
+  d7 = d7 + d5;//(a * 10) + b
+  d7 = d7 * 10;//((a * 10) + b)10
+  d7 = d7 + d6;//((a * 10) * b)10 + c
+  
+  //END COMPUTATION SECTION
+
+  //BEGIN OUTPUT SECTION
+  
+  //END OUTPUT SECTION
   return 0;         /* exit */
 }
 
