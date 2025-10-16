@@ -49,7 +49,6 @@ int main()
 
   read_char();      /* read character into d0*/
   d1 = d0 & 0x000000FF;          /* perform AND operation on d0 and stores results in d1*/
-  printf("%d", d1);
 
   d0 = CR;          /* go to a new line */
   write_char();   //write carriage return
