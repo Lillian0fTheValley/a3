@@ -54,12 +54,16 @@ int main()
     d1 - input - receives AND result from d0 which represents the first character input
     d1 - arithmetic - stores result of d7 * d7 = x^2
     d1 - arithmetic - stores result of 288 * d1 = 288*x^2
+    d1 - arithmetic - stores result of dividing y to isolate hundreds digit
+
 
     d2 - input - receives AND result from d0 which represents the second character input
     d2 - arithmetic - stores result of 3171 * d7 = 3171*x
+    d2 - arithmetic - stores result of dividing y to isolate tens digit
 
     d3 - input - receives AND result from d0 which represents the third character input
     d3 - arithmetic - stores result of d2 / 73 = (3171*x)/73
+    d3 - arithmetic - stores result of dividing y to isolate ones digit
 
     d4 - arithmetic - receives result of conversion of d1 ascii value to int
     d4 - arithmetic - stores int 5286 for use in computation
@@ -156,7 +160,24 @@ int main()
   //END COMPUTATION SECTION
 
   //BEGIN OUTPUT SECTION
-  d0 = 
+  d1 = d6 / 100; //isolating hundreds digit and storing in d1
+  d1 = d1 + '0'; //converting d1 int to ascii
+
+  d2 = d6 / 10; //isolating tens digit and storing in d2
+  d2 = d2 % 10;//isolating tens digit and storing in d2
+  d2 = d2 + '0';//converting d2 int to ascii
+
+  d3 = d6 % 10;//isolating ones digit and storing in d3
+  d3 = d3 + '0';//converting d3 int to ascii
+
+  d0 = d1;//moving hundreds digit to d0 for writing to screen
+  write_char();
+
+  d0 = d2;//moving tens digit to d0 for writing to screen
+  write_char();
+
+  d0 = d3;//moving ones digit to d0 for writing to screen
+  write_char();
   //END OUTPUT SECTION
   return 0;         /* exit */
 }
