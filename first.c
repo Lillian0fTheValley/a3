@@ -69,7 +69,8 @@ int main()
     d5 - arithmetic - stores result of d4 + d5 = 288*x^2 - (3171*x)/73 + 5286
 
     d6 - arithmetic - receives result of conversion of d3 ascii value to int
-    d6 - arithmetic - receives result of d5 % 1000 = (288*x^2 - (3171*x)/73 + 5286) % 1000
+    d6 - arithmetic - receives result of d5 % 10000 = (288*x^2 - (3171*x)/73 + 5286) % 10000
+    d6 - arithmetic - receives result of d6 / 10 = ((288*x^2 - (3171*x)/73 + 5286) % 10000) / 10
 
     d7 - arithmetic - stores (x) result of performing horner's rule on ints stored in d4, d5, d6
   */
@@ -150,11 +151,12 @@ int main()
   d5 = d1 - d3; //d5 = 288*x^2 - (3171*x)/73
   d5 = d4 + d5; //d5 = 288*x^2 - (3171*x)/73 + 5286
 
-  d6 = d5 % 1000; //d5 = (288*x^2 - (3171*x)/73 + 5286) % 1000
+  d6 = d5 % 10000; //d5 = (288*x^2 - (3171*x)/73 + 5286) % 10000
+  d6 = d6 / 10;
   //END COMPUTATION SECTION
 
   //BEGIN OUTPUT SECTION
-
+  d0 = 
   //END OUTPUT SECTION
   return 0;         /* exit */
 }
