@@ -2,7 +2,6 @@
 Student: Lillian Ma - 201722465
 Class: COMP 2655-002
 Professor: Terrance Mok
-
 */
 
 #define _DEFAULT_SOURCE 1  /* don't worry about this - simply needed for IO stuff */
@@ -45,6 +44,18 @@ int main()
              BRANCHES (i.e. NO DECISIONS, LOOPS, ETC).
 
              currently, reads a single character, then writes it back: 
+  */
+
+  /*
+    Register Table:
+    d0 - input - receives keyboard input
+    d0 - output - holds character to be written
+
+    d1 - input - receives AND result from d0 which represents the first character input
+
+    d2 - input - receives AND result from d0 which represents the second character input
+
+    d3 - input - receives AND result from d0 which represents the third character input
   */
 
   read_char();      /* read character into d0*/
@@ -100,7 +111,6 @@ int main()
   write_char();     //write line feed
 
   printf("%d, %d, %d", d1, d2, d3);
-  //eeeeee
 
   return 0;         /* exit */
 }
