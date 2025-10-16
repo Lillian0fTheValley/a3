@@ -47,8 +47,8 @@ int main()
              currently, reads a single character, then writes it back: 
   */
 
-  read_char();      /* read character */
-  d1 = d0 & 0x000000FF;          /* save character 1 in d1 */
+  read_char();      /* read character into d0*/
+  d1 = d0 & 0x000000FF;          /* perform AND operation on d0 and stores results in d1*/
   printf("%d", d1);
 
   d0 = CR;          /* go to a new line */
@@ -66,8 +66,8 @@ int main()
 
   //--------------------------------------------------
 
-  read_char();      /* read character */
-  d2 = d0;          /* save character 1 in d1 */
+  read_char();      /* read character into d0*/
+  d2 = d0 & 0x000000FF;          /* perform AND operation on contents of d0 and stores result in d2 */
 
   d0 = CR;          /* go to a new line */
   write_char();   //write carriage return
@@ -85,7 +85,7 @@ int main()
   //--------------------------------------------------
 
   read_char();      /* read character */
-  d3 = d0;          /* save character 1 in d1 */
+  d3 = d0 & 0x000000FF;          /*performs AND operation on contents of d0 and stores result in d3 */
 
   d0 = CR;          /* go to a new line */
   write_char();   //write carriage return
