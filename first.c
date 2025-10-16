@@ -52,10 +52,26 @@ int main()
     d0 - output - holds character to be written
 
     d1 - input - receives AND result from d0 which represents the first character input
+    d1 - arithmetic - stores result of d7 * d7 = x^2
+    d1 - arithmetic - stores result of 288 * d1 = 288*x^2
 
     d2 - input - receives AND result from d0 which represents the second character input
+    d2 - arithmetic - stores result of 3171 * d7 = 3171*x
 
     d3 - input - receives AND result from d0 which represents the third character input
+    d3 - arithmetic - stores result of d2 / 73 = (3171*x)/73
+
+    d4 - arithmetic - receives result of conversion of d1 ascii value to int
+    d4 - arithmetic - stores int 5286 for use in computation
+    
+    d5 - arithmetic - receives result of conversion of d2 ascii value to int
+    d5 - arithmetic - stores result of d1 - d3 = 288*x^2 - (3171*x)/73
+    d5 - arithmetic - stores result of d4 + d5 = 288*x^2 - (3171*x)/73 + 5286
+
+    d6 - arithmetic - receives result of conversion of d3 ascii value to int
+    d6 - arithmetic - receives result of d5 % 1000 = (288*x^2 - (3171*x)/73 + 5286) % 1000
+
+    d7 - arithmetic - stores (x) result of performing horner's rule on ints stored in d4, d5, d6
   */
 
   //BEGIN INPUT SECTION
@@ -96,7 +112,7 @@ int main()
   //--------------------------------------------------
 
   read_char();      /* read character */
-  d3 = d0 & 0x000000FF;          /*performs AND operation on contents of d0 and stores result in d3 */
+  d3 = d0 & 0x000000FF; /*performs AND operation on contents of d0 and stores result in d3 */
 
   d0 = CR;          /* go to a new line */
   write_char();   //write carriage return
@@ -110,8 +126,6 @@ int main()
   write_char();     //write carriage return
   d0 = LF;
   write_char();     //write line feed
-
-  printf("%d, %d, %d", d1, d2, d3);
   //END INPUT SECTION
 
   //BEGIN COMPUTATION SECTION
@@ -120,15 +134,27 @@ int main()
   d5 = d2 - '0';//converting d2 from ascii to int
   d6 = d3 - '0';//converting d3 from ascii to int
 
-  d7 = d4 * 10;//(a * 10)
+  d7 = d4 * 10;//(a * 10) HORNERS RULE
   d7 = d7 + d5;//(a * 10) + b
   d7 = d7 * 10;//((a * 10) + b)10
   d7 = d7 + d6;//((a * 10) * b)10 + c
+
+  d1 = d7 * d7; //d1 = x^2
+  d1 = 288 * d1; //d1 = 288 * x^2
   
+  d2 = 3171 * d7; //d2 = 3171 * x
+  d3 = d2 / 73; //(3171 * x) / 73
+  
+  d4 = 5286;
+  
+  d5 = d1 - d3; //d5 = 288*x^2 - (3171*x)/73
+  d5 = d4 + d5; //d5 = 288*x^2 - (3171*x)/73 + 5286
+
+  d6 = d5 % 1000; //d5 = (288*x^2 - (3171*x)/73 + 5286) % 1000
   //END COMPUTATION SECTION
 
   //BEGIN OUTPUT SECTION
-  
+
   //END OUTPUT SECTION
   return 0;         /* exit */
 }
