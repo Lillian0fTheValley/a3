@@ -156,7 +156,7 @@ int main()
   d5 = d4 + d5; //d5 = 288*x^2 - (3171*x)/73 + 5286
 
   d6 = d5 % 10000; //d5 = (288*x^2 - (3171*x)/73 + 5286) % 10000
-  d6 = d6 / 10;
+  d6 = d6 / 10; //d6 = ((288*x^2 - (3171*x)/73 + 5286) % 10000) / 10 : FINAL VALUE OF y
   //END COMPUTATION SECTION
 
   //BEGIN OUTPUT SECTION
