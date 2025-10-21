@@ -36,17 +36,7 @@ struct termios orig;
 int d0, d1, d2, d3, d4, d5, d6, d7;
 
 
-int main()
-{
-  /* [TO DO] ALTER THE ALGORITHM IN main SO THAT IT SATISFIES THE ASSIGNMENT
-             SPEC.  YOU ARE NOT ALLOWED TO CALL ANY FUNCTIONS OTHER THAN
-             read_char AND write_char, AND YOU ARE NOT ALLOWED TO CODE ANY
-             BRANCHES (i.e. NO DECISIONS, LOOPS, ETC).
-
-             currently, reads a single character, then writes it back: 
-  */
-
-  /*
+/*
     Register Table:
     d0 - input - receives keyboard input
     d0 - output - holds character to be written
@@ -78,7 +68,8 @@ int main()
 
     d7 - arithmetic - stores (x) result of performing horner's rule on ints stored in d4, d5, d6
   */
-
+int main()
+{
   //BEGIN INPUT SECTION
   read_char();      /* read character into d0*/
   d1 = d0 & 0x000000FF;          /* perform AND operation on d0 and stores results in d1*/
