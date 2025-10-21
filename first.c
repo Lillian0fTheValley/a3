@@ -106,7 +106,7 @@ int main()
   d0 = LF;
   write_char(); //write line feed
 
-  d0 = d1;        //load d1 into d0 to to be written
+  d0 = d2;        //load d2 into d0 to to be written
   write_char();     /* echo character */
 
   d0 = CR;          /* go to a new line */
@@ -124,7 +124,7 @@ int main()
   d0 = LF;
   write_char(); //write line feed
 
-  d0 = d1;        //load d1 into d0 to to be written
+  d0 = d3;        //load d3 into d0 to to be written
   write_char();     /* echo character */
 
   d0 = CR;          /* go to a new line */
