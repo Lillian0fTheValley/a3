@@ -169,6 +169,11 @@ int main()
 
   d0 = d3;//moving ones digit to d0 for writing to screen
   write_char();
+
+  d0 = CR;          /* go to a new line */
+  write_char();   //write carriage return
+  d0 = LF;
+  write_char(); //write line feed  
   //END OUTPUT SECTION
   return 0;         /* exit */
 }
